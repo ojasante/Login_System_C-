@@ -24,20 +24,10 @@ extern std::string user_input;
 extern int module_index;
 extern bool enrolled;
 
-/**enum class Status {
-	Student,
-	Teacher,
-	Staff
-};**/
-
 class User
 {
 public:
-	//std::string user_index;
-	//std::string user_id;
-	//std::string user_name;
 	std::string user_password;
-	//std::string user_category;
 	std::string user_phone;
 	std::string user_address;
 

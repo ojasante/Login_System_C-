@@ -58,7 +58,7 @@ int Module::viewModuleTeacher()
 
  	if (newfile.fail()) {
  		std::cout << "Error opening file." << "\n";
- 		return 1; //tells terminal there is an error
+ 		return 1;
  	}
 
  	user.clear();
@@ -124,7 +124,7 @@ int Module::modifyModuleTeacher(int index_num)
  	newfile.open("module.txt", std::ios::in);
  	if (newfile.fail()) {
  		std::cout << "Error opening file." << "\n";
- 		return 1; //tells terminal there is an error
+ 		return 1; 
  	}
 
 	std::vector<std::string> file_lines;
@@ -138,12 +138,11 @@ int Module::modifyModuleTeacher(int index_num)
 	newfile.open("module.txt", std::ios::in);
  	if (newfile.fail()) {
  		std::cout << "Error opening file." << "\n";
- 		return 1; //tells terminal there is an error
+ 		return 1; 
  	}
 
 	for (int i = 0; i < index_num - 1; ++i) {
 		newfile.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); 
-		//'numeric_limits<streamsize>::max()' means there is no limit for num of characters to be extracted. Extract as needed until '\n' is found
 	}
 
 	std::string mystring;
@@ -156,7 +155,7 @@ int Module::modifyModuleTeacher(int index_num)
 	newfile.open("module.txt", std::ios::out);
  	if (newfile.fail()) {
  		std::cout << "Error opening file." << "\n";
- 		return 1; //tells terminal there is an error
+ 		return 1;
  	}
 
 	while (!acceptable) {
@@ -184,7 +183,6 @@ int Module::modifyModuleTeacher(int index_num)
 			newfile << file_lines[i] << "\n";
  		}
  		else {
-		 	//newfile << std::left << std::setw(5) << module_index
 		 	newfile << std::left << std::setw(10) << module_id
 		 	<< std::left << std::setw(17) << module_name 
 		 	<< std::left << std::setw(10) << teacher_id
@@ -208,7 +206,7 @@ int Module::displayModuleInfo()
 
  	if (newfile.fail()) {
  		std::cout << "Error opening file." << "\n";
- 		return 1; //tells terminal there is an error
+ 		return 1; 
  	}
 
 	std::cout << "======================= Module Database =======================\n";
@@ -241,7 +239,7 @@ int Module::modifyModuleStaff()
 	 	newfile.open("module.txt", std::ios::in);
 	 	if (newfile.fail()) {
 	 		std::cout << "Error opening file." << "\n";
-	 		return 1; //tells terminal there is an error
+	 		return 1; 
 	 	}
 
 		std::vector<std::string> file_lines;
@@ -255,12 +253,11 @@ int Module::modifyModuleStaff()
 		newfile.open("module.txt", std::ios::in);
 	 	if (newfile.fail()) {
 	 		std::cout << "Error opening file." << "\n";
-	 		return 1; //tells terminal there is an error
+	 		return 1; 
 	 	}
 
 		for (int i = 0; i < choice - 1; ++i) {
 			newfile.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); 
-			//'numeric_limits<streamsize>::max()' means there is no limit for num of characters to be extracted. Extract as needed until '\n' is found
 		}
 
 		std::string mystring;
@@ -378,7 +375,7 @@ int Module::modifyModuleStaff()
 		newfile.open("module.txt", std::ios::out);
 	 	if (newfile.fail()) {
 	 		std::cout << "Error opening file." << "\n";
-	 		return 1; //tells terminal there is an error
+	 		return 1;
 	 	}
 
 	 	for (int i = 0; i < file_lines.size(); i++) {
@@ -386,7 +383,6 @@ int Module::modifyModuleStaff()
 				newfile << file_lines[i] << "\n";
 	 		}
 	 		else {
-			 	//newfile << std::left << std::setw(5) << module_index
 			 	newfile << std::left << std::setw(10) << module_id
 			 	<< std::left << std::setw(17) << module_name 
 			 	<< std::left << std::setw(10) << teacher_id
@@ -546,7 +542,7 @@ int Module::addModuleStaff()
  	newfile.open("module.txt", std::ios::in);
  	if (newfile.fail()) {
  		std::cout << "Error opening file." << "\n";
- 		return 1; //tells terminal there is an error
+ 		return 1; 
  	}
 
  	last_line_number = 0;
@@ -562,7 +558,7 @@ int Module::addModuleStaff()
 	newfile.open("module.txt", std::ios::in);
  	if (newfile.fail()) {
  		std::cout << "Error opening file." << "\n";
- 		return 1; //tells terminal there is an error
+ 		return 1;
  	}
 
 	newfile.close();
@@ -570,17 +566,14 @@ int Module::addModuleStaff()
 	newfile.open("module.txt", std::ios::out);
  	if (newfile.fail()) {
 		std::cout << "Error opening file." << "\n";
-		return 1; //tells terminal there is an error
+		return 1;
  	}
-
-	//module_index = std::to_string(last_line_number + 1);
 
  	for (int i = 0; i < last_line_number + 1; i++) {
 		if (i != last_line_number) {
 			newfile << file_lines[i] << "\n";
 		}
 		else {
-		 	//newfile << std::left << std::setw(5) << module_index
 		 	newfile<< std::left << std::setw(10) << module_id
 		 	<< std::left << std::setw(17) << module_name 
 		 	<< std::left << std::setw(10) << teacher_id
@@ -610,7 +603,7 @@ int Module::deleteModuleStaff()
  		newfile.open("module.txt", std::ios::in);
 	 	if (newfile.fail()) {
 	 		std::cout << "Error opening file." << "\n";
-	 		return 1; //tells terminal there is an error
+	 		return 1; 
 	 	}
 
 		std::vector<std::string> file_lines;
@@ -624,16 +617,14 @@ int Module::deleteModuleStaff()
 		newfile.open("module.txt", std::ios::out);
 	 	if (newfile.fail()) {
 	 		std::cout << "Error opening file." << "\n";
-	 		return 1; //tells terminal there is an error
+	 		return 1; 
 	 	}
 
 	 	for (int i = 0; i < file_lines.size(); i++) {
 	 		if (i != choice - 1) {
 				newfile << file_lines[i] << "\n";
 	 		}
-	 		else {
-			 	//delete line
-	 		}
+	 		//else delete line
 		}
 
 		newfile.close();
@@ -662,7 +653,7 @@ int Module::releaseModuleStaff()
 	 	newfile.open("module.txt", std::ios::in);
 	 	if (newfile.fail()) {
 	 		std::cout << "Error opening file." << "\n";
-	 		return 1; //tells terminal there is an error
+	 		return 1; 
 	 	}
 
 		std::vector<std::string> file_lines;
@@ -676,12 +667,11 @@ int Module::releaseModuleStaff()
 		newfile.open("module.txt", std::ios::in);
 	 	if (newfile.fail()) {
 	 		std::cout << "Error opening file." << "\n";
-	 		return 1; //tells terminal there is an error
+	 		return 1; 
 	 	}
 
 		for (int i = 0; i < choice - 1; ++i) {
 			newfile.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); 
-			//'numeric_limits<streamsize>::max()' means there is no limit for num of characters to be extracted. Extract as needed until '\n' is found
 		}
 
 		std::string mystring;
@@ -701,7 +691,7 @@ int Module::releaseModuleStaff()
 		newfile.open("module.txt", std::ios::out);
 	 	if (newfile.fail()) {
 	 		std::cout << "Error opening file." << "\n";
-	 		return 1; //tells terminal there is an error
+	 		return 1;
 	 	}
 
 	 	for (int i = 0; i < file_lines.size(); i++) {

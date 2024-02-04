@@ -1,17 +1,10 @@
-/**#include <iostream>
-#include <fstream>
-#include <string>
-#include <iomanip>**/
-//#include "user.h"
 #include "module.h"
-//using namespace std;
 
 int choice;
 
 int main() {
 	std::fstream newfile;
 
-	//CONTINUE: use user.clear() to decorate code!
 	User user;
 	Module module;
 	std::string input_id, input_password;

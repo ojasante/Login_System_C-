@@ -28,13 +28,12 @@ char User::identifyStatus(std::string user_category)
 
 int User::login(std::string input_id, std::string input_password)
 {
-	//bool status;
 	std::fstream newfile;
  	newfile.open("user.txt", std::ios::in);
 
  	if (newfile.fail()) {
  		std::cout << "Error opening file." << "\n";
- 		return 1; //tells terminal there is an error
+ 		return 1;
  	}
 
 	std::string mystring;
@@ -62,7 +61,7 @@ int User::modifyInfo(int user_line_number)
  	newfile.open("user.txt", std::ios::in);
  	if (newfile.fail()) {
  		std::cout << "Error opening file." << "\n";
- 		return 1; //tells terminal there is an error
+ 		return 1; 
  	}
 
 	std::vector<std::string> file_lines;
@@ -71,20 +70,18 @@ int User::modifyInfo(int user_line_number)
 		file_lines.push_back(lines);
 	}
 
-	newfile.close(); //IDK why I need to close and reopen here. If not user_address & user_phone won't appear
+	newfile.close(); 
 
 	newfile.open("user.txt", std::ios::in);
  	if (newfile.fail()) {
  		std::cout << "Error opening file." << "\n";
- 		return 1; //tells terminal there is an error
+ 		return 1;
  	}
 
  	//goes to specific line in file for next operation
 	for (int i = 0; i < user_line_number - 1; ++i) {
 		newfile.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); 
-		//'numeric_limits<streamsize>::max()' means there is no limit for num of characters to be extracted. Extract as needed until '\n' is found
 	}
-	//consider changing to file_lines[user_line_number - 1] for convenience
 
 	clear();
 	std::string mystring;
@@ -170,12 +167,12 @@ int User::modifyInfo(int user_line_number)
 			std::cout << "Invalid choice!\n\n";
 			break;
 		}
-	} while (choice != 3); //keep showing menu until user chooses return to homepage
-	newfile.open("user.txt", std::ios::out); //reopen to write into file
+	} while (choice != 3); 
+	newfile.open("user.txt", std::ios::out); 
 
  	if (newfile.fail()) {
  		std::cout << "Error opening file." << "\n";
- 		return 1; //tells terminal there is an error
+ 		return 1; 
  	}
 
  	for (int i = 0; i < file_lines.size(); i++) {
@@ -183,7 +180,6 @@ int User::modifyInfo(int user_line_number)
 			newfile << file_lines[i] << "\n";
  		}
  		else {
-	  		//newfile << std::left << std::setw(5) << user_index
 	 		newfile << std::left << std::setw(10) << user_id 
 	 		<< std::left << std::setw(12) << user_name
 	 		<< std::left << std::setw(10) << user_password
@@ -205,7 +201,7 @@ int User::displayUserInfo()
 
  	if (newfile.fail()) {
  		std::cout << "Error opening file." << "\n";
- 		return 1; //tells terminal there is an error
+ 		return 1;
  	}
 
 	std::cout << "======================= User Database =======================\n\n";
@@ -238,7 +234,7 @@ int User::modifyUserStaff()
 	 	newfile.open("user.txt", std::ios::in);
 	 	if (newfile.fail()) {
 	 		std::cout << "Error opening file." << "\n";
-	 		return 1; //tells terminal there is an error
+	 		return 1; 
 	 	}
 
 		std::vector<std::string> file_lines;
@@ -252,12 +248,11 @@ int User::modifyUserStaff()
 		newfile.open("user.txt", std::ios::in);
 	 	if (newfile.fail()) {
 	 		std::cout << "Error opening file." << "\n";
-	 		return 1; //tells terminal there is an error
+	 		return 1; 
 	 	}
 
 		for (int i = 0; i < choice - 1; ++i) {
 			newfile.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); 
-			//'numeric_limits<streamsize>::max()' means there is no limit for num of characters to be extracted. Extract as needed until '\n' is found
 		}
 
 		std::string mystring;
@@ -354,7 +349,7 @@ int User::modifyUserStaff()
 		newfile.open("user.txt", std::ios::out);
 	 	if (newfile.fail()) {
 	 		std::cout << "Error opening file." << "\n";
-	 		return 1; //tells terminal there is an error
+	 		return 1; 
 	 	}
 
 	 	for (int i = 0; i < file_lines.size(); i++) {
@@ -362,7 +357,6 @@ int User::modifyUserStaff()
 				newfile << file_lines[i] << "\n";
 	 		}
 	 		else {
-			 	//newfile << std::left << std::setw(5) << module_index
 			 	newfile << std::left << std::setw(10) << user_id
 			 	<< std::left << std::setw(12) << user_name 
 			 	<< std::left << std::setw(10) << user_password
@@ -383,7 +377,6 @@ int User::modifyUserStaff()
 	return 0;
 }
 
-//CONTINUE:: copy code from module.cpp and change variables to user variables for below functions
 int User::addUserStaff()
 {
 	clear();
@@ -529,7 +522,7 @@ int User::addUserStaff()
  	newfile.open("user.txt", std::ios::in);
  	if (newfile.fail()) {
  		std::cout << "Error opening file." << "\n";
- 		return 1; //tells terminal there is an error
+ 		return 1; 
  	}
 
  	last_line_number = 0;
@@ -545,7 +538,7 @@ int User::addUserStaff()
 	newfile.open("user.txt", std::ios::out);
  	if (newfile.fail()) {
  		std::cout << "Error opening file." << "\n";
- 		return 1; //tells terminal there is an error
+ 		return 1; 
  	}
 
  	for (int i = 0; i < last_line_number + 1; i++) {
@@ -553,7 +546,6 @@ int User::addUserStaff()
 			newfile << file_lines[i] << "\n";
  		}
  		else {
-		 	//newfile << std::left << std::setw(5) << module_index
 		 	newfile << std::left << std::setw(10) << user_id
 		 	<< std::left << std::setw(12) << user_name 
 		 	<< std::left << std::setw(10) << user_password
@@ -583,7 +575,7 @@ int User::deleteUserStaff()
  		newfile.open("user.txt", std::ios::in);
 	 	if (newfile.fail()) {
 	 		std::cout << "Error opening file." << "\n";
-	 		return 1; //tells terminal there is an error
+	 		return 1; 
 	 	}
 
 		std::vector<std::string> file_lines;
@@ -597,7 +589,7 @@ int User::deleteUserStaff()
 		newfile.open("user.txt", std::ios::out);
 	 	if (newfile.fail()) {
 	 		std::cout << "Error opening file." << "\n";
-	 		return 1; //tells terminal there is an error
+	 		return 1; 
 	 	}
 
 	 	for (int i = 0; i < file_lines.size(); i++) {

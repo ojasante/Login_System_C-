@@ -20,16 +20,16 @@ public:
 	std::string student_grade;
 	std::string status;
 
-	//STUDENT & TEACHER
+	//STUDENT
 	int viewModuleStudent();
-	int printStudentInfo(std::string teacher_id);
 
-	//TEACHER & STAFF
+	//TEACHER
+	int printStudentInfo(std::string teacher_id);
 	int viewModuleTeacher();
 	int modifyModuleTeacher(int index_num);
-	int displayModuleInfo();
 
 	//STAFF
+	int displayModuleInfo();
 	int addModuleStaff();
 	int modifyModuleStaff();
 	int deleteModuleStaff();
