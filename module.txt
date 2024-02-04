@@ -1,0 +1,4 @@
+DTS102TC  C++              TC001     ST001     90   Not_Released
+MTH113TC  Statistics       TC002     ST002     78   Not_Released
+EAP121TC  English          TC001     ST002     97   Released
+EAP121TC  English          TC002     ST001     100  Released

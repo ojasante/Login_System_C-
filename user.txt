@@ -1,0 +1,7 @@
+SF001     Oliver      12345     staff      081234567       Suzhou
+SF002     Messi       12345     staff      081234567       Argentina
+TC001     Ronaldo     12345     teacher    081234567       Portugal
+TC002     Son         67890     teacher    087654321       Korea
+ST001     Doncic      77777     student    0877777777      Dallas
+ST002     Giannis     12345     student    081234567       Greece
+TC003     Tom         12345     teacher    08123123        Shanghai
