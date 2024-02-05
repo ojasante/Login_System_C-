@@ -8,6 +8,7 @@
 #include <iomanip>
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 //Global variables that can be accessed in user.cpp and main.cpp
 extern int user_index;
