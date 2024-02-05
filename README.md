@@ -1,3 +1,4 @@
+## Description
 This is a school login management system using C++.
 
 This system allows members in a school to access a common database, providing basic functions for students, teachers, and staff.
@@ -18,7 +19,7 @@ It improved my understanding of several programming concepts, such as object ori
 * Delete modules
 
 
-# How to get started
+## How to get started
 
 1. Download the header, source, and text files from the repository
 2. Run main.cpp
