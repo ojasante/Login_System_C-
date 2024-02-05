@@ -30,7 +30,6 @@ It improved my understanding of several programming concepts, such as object ori
 
 This project has minor issues:
 1. Teacher not enrolled in a module will be prompted to modify grade of a student
-   
   
 ## Find a bug?
 
